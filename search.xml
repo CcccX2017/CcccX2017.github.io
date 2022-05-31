@@ -4,13 +4,31 @@
   
     
     <entry>
-      <title>HelloWorld</title>
-      <link href="/posts/24659/"/>
-      <url>/posts/24659/</url>
+      <title>Win10 + Arch双系统安装步骤(UEFI)</title>
+      <link href="/posts/26337/"/>
+      <url>/posts/26337/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Win10-Arch双系统安装步骤-UEFI"><a href="#Win10-Arch双系统安装步骤-UEFI" class="headerlink" title="Win10 + Arch双系统安装步骤(UEFI)"></a>Win10 + Arch双系统安装步骤(UEFI)</h1><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><p>Win10镜像下载地址</p><blockquote><p><a href="https://next.itellyou.cn/Original/">https://next.itellyou.cn/Original/</a></p></blockquote><p>Arch镜像下载地址</p><blockquote><p><a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></p></blockquote><p>老毛桃</p><blockquote><p><a href="https://www.laomaotao.net/">https://www.laomaotao.net/</a></p></blockquote><p>Rufus</p><blockquote><p><a href="http://rufus.ie/">http://rufus.ie/</a></p></blockquote><p><img src="https://s2.loli.net/2022/05/31/2EqIptviTe6bKM1.png" alt="image-20200906145436717">安装完所需的软件之后，通过rufus刻录软件将系统镜像刻录到U盘中。如果不需要自定义EFI分区大小的话，老毛桃的winpe可以不下载，我这里是为了自定义EFI分区的大小，所以多准备了一个U盘放老毛桃的WinPe</p><h2 id="二、安装Win10"><a href="#二、安装Win10" class="headerlink" title="二、安装Win10"></a>二、安装Win10</h2><h3 id="1、进入BIOS关闭安全启动"><a href="#1、进入BIOS关闭安全启动" class="headerlink" title="1、进入BIOS关闭安全启动"></a>1、进入BIOS关闭安全启动</h3><blockquote><p>我的笔记本是华硕的笔记本，这里按F2可以进入BIOS，大家不一样的品牌的笔记本可以自行百度各自型号的笔记本进入BIOS关闭安全启动</p></blockquote><p><img src="https://s2.loli.net/2022/05/31/yu28irXm4ceFhBE.png" alt="image-20200906150229920"></p><h3 id="2、使用老毛桃进行分区"><a href="#2、使用老毛桃进行分区" class="headerlink" title="2、使用老毛桃进行分区"></a>2、使用老毛桃进行分区</h3><blockquote><p>如果你已经有Win10的操作系统或者你的EFI分区不需要自定义大小，可以忽略这步操作</p></blockquote><blockquote><p>我笔记本的硬盘已经被我格式化掉了，所以我在插入U盘的情况下，会自动读取U盘的可启动文件，进入老毛桃的winpe系统，华硕的笔记本按esc键也可以呼出快速启动选项，选中U盘启动即可</p></blockquote><blockquote><p>1.进入Winpe之后，打开磁盘工具进行分区，如果新建EFI&#x2F;MSR分区的按键为灰色(不可点击)的话，先点击磁盘然后点击<strong>转换分区表类型为GUID格式</strong>保存即可</p></blockquote><p><img src="https://s2.loli.net/2022/05/31/Z4nozMbd5R8HpjC.jpg" alt="微信图片_20200906145151-1599376002825"></p><blockquote><p>建立ESP&#x2F;MSR分区，我这里分512M并4K对齐，各位可以按需进行配置。</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312313927.jpg"></p><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312314111.jpg" alt="微信图片_202009061451512"></p><blockquote><p>建立Win10系统盘以及数据盘，这里我系统盘给65.1G，数据盘给150.1G ，主要目的是为了让它的可用空间显示为65.0G和150.0G而不是64.9G和149.9G，分区大小也是按需分配，大家可以自行设置。建立完分区之后，保存更改即可。我留出了223G的空间准备去安装Arch Linux所以这里我并没有格式化剩下的分区。</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312316148.jpg" alt="微信图片_202009061451513"></p><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312316019.jpg" alt="微信图片_202009061451514"></p><h3 id="3、插入Win10镜像U盘进行Win10的安装"><a href="#3、插入Win10镜像U盘进行Win10的安装" class="headerlink" title="3、插入Win10镜像U盘进行Win10的安装"></a>3、插入Win10镜像U盘进行Win10的安装</h3><blockquote><p>第一步语言这里默认即可，直接点击下一步</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312317754.jpg" alt="微信图片_202009061451515"></p><blockquote><p>接下来就是很简单的下一步，到了 <strong>你想执行哪种类型的安装？</strong>的时候选择<strong>自定义</strong>，然后选择安装专业版</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312317567.jpg" alt="微信图片_202009061451516"></p><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312317027.jpg" alt="微信图片_202009061451517"></p><blockquote><p>接下来就进入到分区的界面了，由于我已经通过老毛桃进行分区了，所以这里不在进行分区，如果没有用老毛桃进行分区的话，可以在这个界面进行分区操作，Win10会自动分出100M的ESP分区</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312324904.jpg" alt="微信图片_202009061451518"></p><blockquote><p>分区完成之后，选择你要安装Win10的硬盘，然后点击下一步。我这里是安装在<strong>Win10</strong>这个硬盘下。点击下一步之后就会开始安装Win10</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312323464.jpg" alt="微信图片_202009061451519"></p><blockquote><p>安装完成之后，会自动进入配置界面，大家自行设置一下就行了，设置是很简单的，根据提示完成就可以了</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312324256.jpg" alt="微信图片_2020090614515110"></p><h3 id="4、啰嗦两句"><a href="#4、啰嗦两句" class="headerlink" title="4、啰嗦两句"></a>4、啰嗦两句</h3><blockquote><p>自此，你的Win10系统已经安装完成了，可以接下来准备按Arch的过程了。这里我就啰嗦两句，就是如果你已经有Win10的操作系统了，可以在<strong>此电脑</strong>右键点击<strong>管理</strong>在打开的界面找到<strong>磁盘管理</strong>，选择你要安装的硬盘压缩一部分空间供Arch Linux系统的安装即可</p></blockquote><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312325828.jpg" alt="微信图片_2020090614515111"></p><p><img src="https://fastly.jsdelivr.net/gh/wackychen/hexo_assets/img/202205312325659.jpg" alt="微信图片_2020090614515112"></p><blockquote><p>到这里，Win10的整个安装过程就结束了</p></blockquote>]]></content>
       
       
+      <categories>
+          
+          <category> 系统 </category>
+          
+          <category> 安装教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+            <tag> archlinux </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
       
     </entry>
     
