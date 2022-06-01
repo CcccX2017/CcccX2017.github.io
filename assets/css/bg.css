@@ -19,3 +19,11 @@
 #aside-content .card-widget, #recent-posts > .recent-post-item, .layout_page > div:first-child:not(.recent-posts), .layout_post > #page, .layout_post > #post, .read-mode .layout_post > #post {
     background: rgba(255, 255, 255, .15);
 }
+
+/* 移动端目录背景不透明 */
+@media screen and (max-width: 900px){
+    #aside-content #card-toc {
+        background: #fff;
+    }
+}
+
