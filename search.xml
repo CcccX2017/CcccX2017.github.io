@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Docker下Mysql的安装和配置</title>
+      <link href="/posts/643ecf56/"/>
+      <url>/posts/643ecf56/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Mysql </category>
+          
+          <category> Docker </category>
+          
+          <category> 安装 </category>
+          
+          <category> 配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows下Typora Beta版本提示过期的解决方案</title>
       <link href="/posts/a3aa8045/"/>
       <url>/posts/a3aa8045/</url>
@@ -92,9 +123,9 @@
       
         <tags>
             
-            <tag> archlinux </tag>
-            
             <tag> linux </tag>
+            
+            <tag> archlinux </tag>
             
         </tags>
       
@@ -121,9 +152,9 @@
       
         <tags>
             
-            <tag> archlinux </tag>
-            
             <tag> linux </tag>
+            
+            <tag> archlinux </tag>
             
             <tag> windows </tag>
             
